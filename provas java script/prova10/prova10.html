@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Organizador de Tarefas DOM</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; background-color: #f4f4f4; }
+        .container { max-width: 400px; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        
+        /* Estilo para tarefas concluídas */
+        .concluida { 
+            text-decoration: line-through; 
+            color: gray; 
+        }
+
+        ul { list-style: none; padding: 0; }
+        li { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            padding: 8px; 
+            border-bottom: 1px solid #eee; 
+            cursor: pointer;
+        }
+        button.remove-btn { background: #ff4444; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Minhas Tarefas</h2>
+    <input type="text" id="tarefaInput" placeholder="Digite uma nova tarefa...">
+    <button id="addBtn">Adicionar Tarefa</button>
+
+    <ul id="listaTarefas">
+        </ul>
+</div>
+
+<script src="prova10.js"></script>
+</body>
+</html>

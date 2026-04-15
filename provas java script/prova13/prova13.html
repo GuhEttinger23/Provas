@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro com Tratamento de Erros</title>
+    <style>
+        body { font-family: sans-serif; background: #f4f7f6; display: flex; justify-content: center; padding: 20px; }
+        .form-card { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); width: 400px; }
+        .field { margin-bottom: 15px; }
+        label { display: block; font-weight: bold; margin-bottom: 5px; }
+        input { width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; }
+        .error-msg { color: #d9534f; font-size: 0.85em; margin-top: 5px; display: block; min-height: 1em; }
+        .success-msg { color: #5cb85c; font-weight: bold; text-align: center; margin-top: 15px; }
+        button { width: 100%; padding: 10px; background: #0275d8; color: white; border: none; border-radius: 4px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+<div class="form-card">
+    <h2>Criar Conta</h2>
+    <form id="cadastroForm">
+        <div class="field">
+            <label>Nome Completo</label>
+            <input type="text" id="nome">
+            <span id="error-nome" class="error-msg"></span>
+        </div>
+        <div class="field">
+            <label>Usuário</label>
+            <input type="text" id="usuario">
+            <span id="error-usuario" class="error-msg"></span>
+        </div>
+        <div class="field">
+            <label>E-mail</label>
+            <input type="email" id="email">
+            <span id="error-email" class="error-msg"></span>
+        </div>
+        <div class="field">
+            <label>Senha</label>
+            <input type="password" id="senha">
+            <span id="error-senha" class="error-msg"></span>
+        </div>
+        <div class="field">
+            <label>Idade</label>
+            <input type="number" id="idade">
+            <span id="error-idade" class="error-msg"></span>
+        </div>
+        <button type="submit">Cadastrar</button>
+    </form>
+    <div id="mensagemSucesso" class="success-msg"></div>
+</div>
+
+<script src="prova13.js"></script>
+</body>
+</html>

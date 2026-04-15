@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerenciador de Notas Persistente</title>
+    <style>
+        body { font-family: sans-serif; display: flex; justify-content: center; padding: 50px; background: #f0f2f5; }
+        .app { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); width: 350px; }
+        input { width: 70%; padding: 8px; margin-bottom: 10px; }
+        button { padding: 8px; cursor: pointer; }
+        .nota-item { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 10px; 
+            border-bottom: 1px solid #eee; 
+        }
+        .btn-remove { background: #ff4d4d; color: white; border: none; border-radius: 4px; padding: 5px; }
+    </style>
+</head>
+<body>
+
+<div class="app">
+    <h3>Minhas Notas</h3>
+    <input type="text" id="notaInput" placeholder="Título da nota...">
+    <button id="addBtn">Salvar</button>
+    <div id="listaNotas"></div>
+</div>
+
+<script src="prova12.js"></script>
+</body>
+</html>
