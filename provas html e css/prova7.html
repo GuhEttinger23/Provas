@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variáveis CSS e Responsividade</title>
+    <style>
+        /* 1. Definição das Variáveis no :root (Configuração para Telas Pequenas/Mobile) */
+        :root {
+            /* Cores */
+            --primary-color: #264653;
+            --accent-color: #E76F51;
+            --bg-color: #F4F1DE;
+            
+            /* Tamanhos de Fonte */
+            --font-size-h1: 1.8rem;
+            --font-size-p: 1rem;
+            
+            /* Espaçamentos */
+            --spacing-main: 15px;
+            --container-padding: 20px;
+        }
+
+        /* 2. Modificação das Variáveis para Telas Médias (Tablets) */
+        @media (min-width: 768px) {
+            :root {
+                --font-size-h1: 2.5rem;
+                --spacing-main: 25px;
+                --container-padding: 40px;
+            }
+        }
+
+        /* 3. Modificação das Variáveis para Telas Grandes (Desktop) */
+        @media (min-width: 1200px) {
+            :root {
+                --font-size-h1: 3.5rem;
+                --spacing-main: 40px;
+                --container-padding: 80px;
+            }
+        }
+
+        /* Aplicação das Variáveis */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--primary-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            padding: var(--container-padding);
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: var(--spacing-main);
+            text-align: center;
+            margin-bottom: var(--spacing-main);
+        }
+
+        h1 {
+            font-size: var(--font-size-h1);
+            transition: font-size 0.3s ease; /* Transição suave ao redimensionar */
+        }
+
+        section {
+            background: white;
+            padding: var(--spacing-main);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        p {
+            font-size: var(--font-size-p);
+            margin-bottom: var(--spacing-main);
+        }
+
+        .box-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-main); /* Espaçamento dinâmico entre itens */
+            margin-top: var(--spacing-main);
+        }
+
+        .item {
+            background-color: var(--accent-color);
+            color: white;
+            padding: var(--spacing-main);
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Título Dinâmico</h1>
+    </header>
+
+    <main class="container">
+        <section>
+            <h2>Ajuste o tamanho da janela</h2>
+            <p>Note como o preenchimento (padding), o tamanho da fonte do título e o espaço entre as caixas abaixo mudam automaticamente conforme a largura da tela aumenta ou diminui.</p>
+            
+            <div class="box-grid">
+                <div class="item">Espaçamento var()</div>
+                <div class="item">Fonte var()</div>
+                <div class="item">Layout Flexível</div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Harmonioso</title>
+    <style>
+        /* Paleta de Cores:
+           Primária: #264653 (Azul Petróleo)
+           Secundária: #2A9D8F (Verde Água)
+           Destaque/Ação: #E76F51 (Coral)
+           Fundo: #F4F1DE (Areia Suave)
+        */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #F4F1DE;
+            color: #264653;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #264653;
+            color: #F4F1DE;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            padding: 40px 10%;
+            flex: 1;
+        }
+
+        section {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        aside {
+            background-color: #2A9D8F;
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            align-self: start;
+        }
+
+        /* Estilização do Formulário */
+        form div {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #264653;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1rem;
+            background-color: #fcfcfc;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #2A9D8F;
+            box-shadow: 0 0 5px rgba(42, 157, 143, 0.3);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        button {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: transform 0.1s, opacity 0.3s;
+        }
+
+        button[type="submit"] {
+            background-color: #E76F51;
+            color: white;
+        }
+
+        button[type="reset"] {
+            background-color: #264653;
+            color: white;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        footer {
+            background-color: #264653;
+            color: #F4F1DE;
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .container { grid-template-columns: 1fr; padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Portal de Cadastro</h1>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>Crie sua conta</h2>
+            <p style="margin-bottom: 20px;">Preencha os campos abaixo para se juntar à nossa comunidade.</p>
+            
+            <form>
+                <div>
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                </div>
+
+                <div>
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" placeholder="exemplo@email.com" required>
+                </div>
+
+                <div>
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" name="senha" placeholder="Mínimo 8 caracteres" required>
+                </div>
+
+                <div>
+                    <label for="pais">País:</label>
+                    <select id="pais" name="pais">
+                        <option value="br">Brasil</option>
+                        <option value="pt">Portugal</option>
+                        <option value="us">Estados Unidos</option>
+                        <option value="ao">Angola</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="mensagem">Mensagem/Bio:</label>
+                    <textarea id="mensagem" name="mensagem" placeholder="Conte um pouco sobre você..."></textarea>
+                </div>
+
+                <div class="btn-group">
+                    <button type="submit">Enviar Cadastro</button>
+                    <button type="reset">Limpar Campos</button>
+                </div>
+            </form>
+        </section>
+
+        <aside>
+            <h3>Por que se cadastrar?</h3>
+            <p>Ao criar uma conta, você terá acesso a conteúdos exclusivos, atualizações mensais e nossa newsletter premium.</p>
+            <hr style="margin: 15px 0; border: 0; border-top: 1px solid rgba(255,255,255,0.2);">
+            <p>Dúvidas? Entre em <a href="#" style="color: #F4F1DE;">contato</a>.</p>
+        </aside>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 - Sistema de Cadastro Harmonioso</p>
+    </footer>
+
+</body>
+</html>

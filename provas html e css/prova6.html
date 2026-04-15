@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Responsivo com Pseudo-elementos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #F4F1DE;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Estrutura do Formulário */
+        .login-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            width: 100%; /* Padrão para telas menores */
+        }
+
+        /* Media Query: Telas maiores (Desktop) */
+        @media (min-width: 768px) {
+            .login-card {
+                max-width: 450px; /* Largura fixa em telas grandes */
+            }
+        }
+
+        h2 {
+            text-align: center;
+            color: #264653;
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #264653;
+            padding-left: 25px; /* Espaço para o ícone ::before */
+            position: relative;
+        }
+
+        /* Uso de Pseudo-elemento ::before para ícones decorativos */
+        label[for="user"]::before {
+            content: "👤";
+            position: absolute;
+            left: 0;
+        }
+
+        label[for="pass"]::before {
+            content: "🔒";
+            position: absolute;
+            left: 0;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #2A9D8F;
+        }
+
+        /* Botões */
+        .btn-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 25px;
+        }
+
+        button {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            position: relative; /* Necessário para o ::after */
+            overflow: hidden;   /* Esconde o efeito que sai da borda */
+            transition: color 0.3s;
+            color: white;
+        }
+
+        .btn-send { background-color: #E76F51; }
+        .btn-clear { background-color: #264653; }
+
+        /* Pseudo-elemento ::after para efeito de Hover nos botões */
+        button::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: left 0.4s;
+        }
+
+        button:hover::after {
+            left: 0;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-card">
+        <h2>Acessar Conta</h2>
+        
+        <form>
+            <div class="input-group">
+                <label for="user">Nome de Usuário</label>
+                <input type="text" id="user" placeholder="Digite seu usuário" required>
+            </div>
+
+            <div class="input-group">
+                <label for="pass">Senha</label>
+                <input type="password" id="pass" placeholder="Digite sua senha" required>
+            </div>
+
+            <div class="btn-container">
+                <button type="submit" class="btn-send">Enviar</button>
+                <button type="reset" class="btn-clear">Limpar</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Flexbox Centralizado</title>
+    <style>
+        /* Paleta: #264653 (Azul), #E76F51 (Coral), #F4F1DE (Areia) */
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #F4F1DE;
+        }
+
+        /* 1. O Contêiner Flexível */
+        .flex-container {
+            display: flex;            /* Ativa o Flexbox */
+            justify-content: center;  /* Centraliza horizontalmente */
+            align-items: center;      /* Centraliza verticalmente */
+            
+            min-height: 100vh;        /* Altura mínima de 100% da tela */
+            gap: 20px;                /* Espaçamento entre as caixas */
+            padding: 20px;
+        }
+
+        /* 2. As Caixas Internas */
+        .caixa {
+            width: 150px;
+            height: 150px;
+            background-color: #264653;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 12px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        /* Destaque na caixa do meio */
+        .caixa:nth-child(2) {
+            background-color: #E76F51;
+            height: 180px; /* Um pouco maior para criar hierarquia */
+        }
+
+        .caixa:hover {
+            transform: translateY(-10px);
+        }
+
+        @media (max-width: 600px) {
+            .flex-container {
+                flex-direction: column; /* Empilha em telas pequenas */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="flex-container">
+        <div class="caixa">Caixa 1</div>
+        <div class="caixa">Caixa 2</div>
+        <div class="caixa">Caixa 3</div>
+    </main>
+
+</body>
+</html>
